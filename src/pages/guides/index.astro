@@ -1,0 +1,97 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import { guides } from '../../data/guides';
+---
+
+<BaseLayout
+  title="Guides - China Dropshipping & Fulfillment How-To Articles"
+  description="Practical step-by-step guides on dropshipping from China, Shopify fulfillment, Single SKU strategies, and scaling your e-commerce store. Expert advice from WegoFulfill."
+  keywords="China dropshipping guide, how to dropship from China, Shopify fulfillment guide, single SKU fulfillment, scaling Shopify store, China fulfillment tutorial, ecommerce guide"
+>
+  <Header slot="header" />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h1>Guides</h1>
+        <p>Step-by-step tutorials to master China dropshipping and fulfillment</p>
+      </div>
+
+      <div class="grid-2">
+        {guides.map(guide => (
+          <a href={`/guides/${guide.slug}/`} class="card content-card">
+            <div class="content-img-placeholder">
+              <span>&#128214; Guide</span>
+            </div>
+            <div class="card-body">
+              <div class="content-meta">
+                <span>{guide.date}</span>
+                <span>{guide.readTime}</span>
+                <span class="content-category">{guide.category}</span>
+              </div>
+              <h3>{guide.title}</h3>
+              <p>{guide.description}</p>
+              <span class="card-link">Read Guide &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <InquiryForm />
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .content-card {
+    border: 1px solid var(--color-border);
+    transition: all var(--transition);
+  }
+  .content-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    color: inherit;
+  }
+  .content-img-placeholder {
+    height: 160px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .content-meta {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    flex-wrap: wrap;
+  }
+  .content-category {
+    background: rgba(249,115,22,0.1);
+    color: var(--color-accent);
+    padding: 0.15rem 0.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+  .card-body h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+  .card-body p { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 0; }
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+  }
+  @media (max-width: 576px) {
+    .content-img-placeholder { height: 140px; }
+  }
+</style>

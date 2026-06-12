@@ -1,0 +1,180 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contact Us - Get a Free Fulfillment Quote | WegoFulfill"
+  description="Contact WegoFulfill for a free, no-obligation quote on China product sourcing, fulfillment, and international shipping. Based in Shenzhen, China. Send your product details and we'll quote within 24 hours."
+  keywords="contact WegoFulfill, China fulfillment quote, dropshipping quote, sourcing agent contact, fulfillment inquiry, free quote China shipping"
+>
+  <Header slot="header" />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h1>Get a Free Quote</h1>
+        <p>Send a product link or image, expected order volume, and target country. We'll quote first &mdash; no commitment required.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-card">
+            <h3>Get In Touch</h3>
+
+            <div class="info-item">
+              <div class="info-label">&#128205; Address</div>
+              <div class="info-value">Longhua District, Shenzhen City,<br/>Guangdong Province, China</div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">&#9993; Email</div>
+              <a href="mailto:support@wegofulfill.com">support@wegofulfill.com</a>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">&#128222; Phone / WhatsApp</div>
+              <a href="https://wa.me/8619925247178">+86 199 2524 7178</a>
+            </div>
+
+            <div class="info-item">
+              <div class="info-label">&#128338; Business Hours</div>
+              <div class="info-value">Monday &ndash; Saturday<br/>9:00 AM &ndash; 6:00 PM (CST)</div>
+            </div>
+
+            <div class="info-section">
+              <h4>What to Include</h4>
+              <ul>
+                <li>Product link or image</li>
+                <li>Expected daily orders</li>
+                <li>Target countries</li>
+                <li>Special requirements (branding, packaging, etc.)</li>
+              </ul>
+            </div>
+
+            <div class="info-section">
+              <h4>We Support</h4>
+              <div class="platforms">
+                <span>Shopify</span>
+                <span>WooCommerce</span>
+                <span>TikTok Shop</span>
+                <span>Amazon</span>
+                <span>eBay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formsubmit.co/support@wegofulfill.com" method="POST">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="you@store.com" />
+            </div>
+            <div class="form-group">
+              <label for="store">Store URL / Platform</label>
+              <input type="text" id="store" name="store" placeholder="mystore.shopify.com" />
+            </div>
+            <div class="form-group">
+              <label for="volume">Expected Daily Orders</label>
+              <select id="volume" name="volume">
+                <option value="">Select range...</option>
+                <option value="0-10">0 &ndash; 10 orders/day</option>
+                <option value="10-50">10 &ndash; 50 orders/day</option>
+                <option value="50-100">50 &ndash; 100 orders/day</option>
+                <option value="100+">100+ orders/day</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Product Details &amp; Requirements *</label>
+            <textarea id="message" name="message" rows="6" required placeholder="Paste product links or describe the products you want to sell. Include target countries and any special requirements (branding, packaging, DDP shipping, etc.)."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          <p class="form-note">We typically respond within 24 hours. No spam, no obligation.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .info-card {
+    background: var(--color-primary-dark);
+    color: #fff;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    height: 100%;
+  }
+  .info-card h3 { color: #fff; margin-bottom: 2rem; font-size: 1.3rem; }
+  .info-item { margin-bottom: 1.5rem; }
+  .info-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent-light);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+  .info-item a, .info-value { color: #ccc; font-size: 0.95rem; }
+  .info-item a:hover { color: var(--color-accent-light); }
+
+  .info-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); }
+  .info-section h4 { color: #fff; margin-bottom: 0.75rem; font-size: 0.95rem; }
+  .info-section ul { display: flex; flex-direction: column; gap: 0.4rem; }
+  .info-section li { color: #aaa; font-size: 0.9rem; padding-left: 1rem; position: relative; }
+  .info-section li::before { content: '\2022'; position: absolute; left: 0; color: var(--color-accent-light); }
+  .platforms { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .platforms span {
+    background: rgba(255,255,255,0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+
+  .contact-form {
+    background: var(--color-bg);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+  .form-group label { font-weight: 600; font-size: 0.9rem; }
+  .form-group input, .form-group textarea, .form-group select {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    transition: border-color var(--transition);
+    background: #fff;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  .form-group textarea { resize: vertical; }
+  .form-note { margin-top: 0.75rem; font-size: 0.8rem; color: var(--color-text-light); }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+</style>

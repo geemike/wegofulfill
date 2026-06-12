@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { posts } from '../../data/posts';
+---
+
+<BaseLayout
+ title="Blog - China Sourcing, Fulfillment & Dropshipping Guides"
+ description="Expert guides on China product sourcing, dropshipping fulfillment, quality control, and international shipping. Practical tips from WegoFulfill to help you scale your e-commerce business."
+ keywords="China sourcing blog, dropshipping guide, fulfillment tips, China logistics guide, factory-direct sourcing tutorial, China shipping guide, ecommerce fulfillment blog"
+>
+ <Header slot="header" />
+
+ <section class="section">
+ <div class="container">
+ <div class="section-title">
+ <h1>Blog &amp; Resources</h1>
+ <p>Practical guides to help you source, fulfill, and ship from China</p>
+ </div>
+
+ <div class="grid-2">
+ {posts.map(post => (
+ <a href={`/blog/${post.slug}/`} class="card blog-card">
+ <div class="blog-img-placeholder">
+ <span>{post.category}</span>
+ </div>
+ <div class="card-body">
+ <div class="blog-meta">
+ <span class="blog-date">{post.date}</span>
+ <span class="blog-time">{post.readTime}</span>
+ <span class="blog-category">{post.category}</span>
+ </div>
+ <h3>{post.title}</h3>
+ <p>{post.description}</p>
+ <span class="card-link">Read More &rarr;</span>
+ </div>
+ </a>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+ .blog-card {
+ border: 1px solid var(--color-border);
+ transition: all var(--transition);
+ }
+ .blog-card:hover {
+ border-color: var(--color-primary);
+ transform: translateY(-4px);
+ box-shadow: var(--shadow-lg);
+ color: inherit;
+ }
+ .blog-img-placeholder {
+ height: 180px;
+ background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ font-weight: 600;
+ font-size: 1.1rem;
+ }
+ .blog-meta {
+ display: flex;
+ gap: 0.75rem;
+ margin-bottom: 0.75rem;
+ font-size: 0.85rem;
+ color: var(--color-text-light);
+ flex-wrap: wrap;
+ }
+ .blog-category {
+ background: rgba(249,115,22,0.1);
+ color: var(--color-accent) !important;
+ padding: 0.15rem 0.6rem;
+ border-radius: 50px;
+ font-weight: 600;
+ }
+ .card-body h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+ .card-body p { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 0; }
+ .card-link {
+ display: inline-block;
+ margin-top: 0.75rem;
+ font-weight: 600;
+ font-size: 0.85rem;
+ color: var(--color-accent);
+ }
+ @media (max-width: 768px) {
+ .section-title h1 { font-size: 1.5rem; }
+ }
+ @media (max-width: 768px) {
+ .grid-2 { grid-template-columns: 1fr; }
+ }
+ @media (max-width: 576px) {
+ .grid-2 { grid-template-columns: 1fr; }
+ .blog-img-placeholder { height: 140px; }
+ .card-body { padding: 1.25rem; }
+ .card-body h3 { font-size: 1rem; }
+ .card-body p { font-size: 0.85rem; }
+ .blog-meta { font-size: 0.8rem; gap: 0.5rem; }
+ }
+</style>
+

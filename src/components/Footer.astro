@@ -1,0 +1,125 @@
+﻿---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-text">Wego<span class="logo-accent">Fulfill</span></span>
+        </a>
+        <p>Professional China sourcing &amp; fulfillment partner. We help global sellers scale with 24h processing, no MOQ, and reliable global shipping.</p>
+        <div class="footer-contact">
+          <div class="fc-item">
+            <span class="fc-icon">&#128205;</span>
+            <span>Longhua District, Shenzhen City,<br/>Guangdong Province, China</span>
+          </div>
+          <div class="fc-item">
+            <span class="fc-icon">&#9993;</span>
+            <a href="mailto:support@wegofulfill.com">support@wegofulfill.com</a>
+          </div>
+          <div class="fc-item">
+            <span class="fc-icon">&#128222;</span>
+            <a href="https://wa.me/8619925247178">+86 199 2524 7178</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Business -->
+      <div class="footer-col">
+        <h4>Business</h4>
+        <ul>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/shipping-delivery/">Shipping &amp; Delivery</a></li>
+          <li><a href="/refund-reshipment/">Refund &amp; Reshipment Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/guides/">Guides</a></li>
+          <li><a href="/comparisons/">Comparisons</a></li>
+          <li><a href="/case-studies/">Case Studies</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} WegoFulfill. All rights reserved. | Powered by WegoFulfill</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { padding-top: 80px;
+    background: var(--color-bg-dark);
+    color: #ccc;
+    padding: 4rem 0 0;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+  .footer-brand .logo-text { font-size: 1.3rem; font-weight: 800; color: #fff; }
+  .footer-brand 
+  .footer-brand p { color: #94a3b8;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #94a3b8;
+  }
+  .footer-contact { margin-top: 1.25rem; }
+  .fc-item { color: #94a3b8;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .fc-icon { flex-shrink: 0; font-size: 0.9rem; }
+  .fc-item a { color: #94a3b8; }
+  .fc-item a:hover { color: var(--color-accent); }
+
+  .footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 1rem; }
+  .footer-col ul { display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col a { color: #94a3b8; font-size: 0.85rem; transition: color var(--transition); }
+  .footer-col a:hover { color: #3b82f6; transform: translateX(5px); display: inline-block; }
+
+  .footer-bottom { border-top: 1px solid #1e293b;
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  .footer-bottom a { color: #888; }
+  .footer-bottom a:hover { color: var(--color-accent); }
+
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>

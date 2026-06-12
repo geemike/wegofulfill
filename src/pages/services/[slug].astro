@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import { products } from '../../data/products';
+
+export function getStaticPaths() {
+ return products.map(product => ({
+ params: { slug: product.slug },
+ props: { product },
+ }));
+}
+
+const { product } = Astro.props;
+---
+
+<BaseLayout
+ title={product.title}
+ description={product.description}
+ keywords={`${product.title}, China ${product.category}, ${product.category} services China, dropshipping ${product.category}, 3PL ${product.category} Shenzhen`}
+ pageType="article"
+>
+ <Header slot="header" />
+
+ <section class="section">
+ <div class="container">
+ <nav class="breadcrumb" aria-label="Breadcrumb">
+ <a href="/">Home</a> &rsaquo; <a href="/services/">Services</a> &rsaquo; <span>{product.title}</span>
+ </nav>
+
+ <div class="service-detail">
+ <div class="service-header">
+ <div class="service-icon-lg" set:html={product.icon} />
+ <div>
+ <h1>{product.title}</h1>
+ <p class="service-desc">{product.description}</p>
+ </div>
+ </div>
+
+ <div class="features-section">
+ <h2>What's Included</h2>
+ <div class="grid-2">
+ {product.features.map(feature => (
+ <div class="feature-card">
+ <h4>{feature.title}</h4>
+ <p>{feature.desc}</p>
+ </div>
+ ))}
+ </div>
+ </div>
+
+ <div class="cta-inline">
+ <h3>Ready to get started with {product.title}?</h3>
+ <p>Send us a product link or image, your expected order volume, and target country. We'll provide a clear quote - no commitment required.</p>
+ <a href="/contact/" class="btn btn-primary">Get a Free Quote</a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <InquiryForm
+ title={`Interested in ${product.title}?`}
+ subtitle="Contact us today for a customized solution and transparent pricing."
+ />
+
+ <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+ .breadcrumb {
+ font-size: 0.9rem;
+ color: var(--color-text-light);
+ margin-bottom: 2rem;
+ }
+ .breadcrumb a { color: var(--color-primary); }
+
+ .service-header {
+ display: flex;
+ gap: 2rem;
+ align-items: flex-start;
+ margin-bottom: 3rem;
+ padding: 2.5rem;
+ background: var(--color-bg-alt);
+ border-radius: var(--radius);
+ }
+ .service-icon-lg { font-size: 3.5rem; flex-shrink: 0; }
+ .service-header h1 { margin-bottom: 1rem; }
+ .service-desc {
+ font-size: 1.05rem;
+ color: var(--color-text-light);
+ line-height: 1.8;
+ }
+ @media (max-width: 768px) {
+ .service-header { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+ .service-header h1 { font-size: 1.5rem; }
+ }
+
+ .features-section { margin-bottom: 3rem; }
+ .features-section h2 { margin-bottom: 1.5rem; }
+
+ .feature-card {
+ padding: 1.75rem;
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius);
+ transition: all var(--transition);
+ }
+ .feature-card:hover {
+ border-color: var(--color-primary);
+ box-shadow: var(--shadow-sm);
+ }
+ .feature-card h4 {
+ margin-bottom: 0.5rem;
+ color: var(--color-primary);
+ }
+ .feature-card p {
+ color: var(--color-text-light);
+ font-size: 0.95rem;
+ line-height: 1.7;
+ }
+
+ .cta-inline {
+ background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+ color: #fff;
+ padding: 2.5rem;
+ border-radius: var(--radius);
+ text-align: center;
+ }
+ .cta-inline h3 { color: #fff; margin-bottom: 0.75rem; }
+ .cta-inline p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+ @media (max-width: 576px) {
+ .service-header { flex-direction: column; }
+ }
+</style>

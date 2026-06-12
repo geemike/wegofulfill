@@ -1,0 +1,58 @@
+﻿---
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { title = "Get a Free Quote", subtitle = "Send a product link or image, expected order volume, and target country. We\u2019ll quote first \u2014 no commitment required." } = Astro.props;
+---
+
+<div class="wf-form-box" id="quote-form">
+  <h2>{title}</h2>
+  <p style="margin-bottom:30px;">{subtitle}</p>
+
+  <form action="https://formsubmit.co/support@wegofulfill.com" method="POST" class="wf-cf7-form">
+    <div class="form-group"><input type="text" name="name" required placeholder="Your Name *" /></div>
+    <div class="form-group"><input type="email" name="email" required placeholder="Your Email *" /></div>
+    <div class="form-group"><input type="text" name="store" placeholder="Store URL / Platform" /></div>
+    <div class="form-group">
+      <select name="volume">
+        <option value="">Expected Daily Orders</option>
+        <option value="0-10">0 - 10 orders/day</option>
+        <option value="10-50">10 - 50 orders/day</option>
+        <option value="50-100">50 - 100 orders/day</option>
+        <option value="100+">100+ orders/day</option>
+      </select>
+    </div>
+    <div class="form-group"><input type="text" name="product-link" placeholder="Product Link (AliExpress/Shopify) *" required /></div>
+    <div class="form-group"><input type="text" name="country" placeholder="Target Country (e.g. USA)" required /></div>
+    <div class="form-group form-full"><textarea name="message" rows="4" placeholder="Any specific requirements?"></textarea></div>
+    <div class="form-submit"><button type="submit" class="wf-form-submit-btn">Get a Free Quote</button></div>
+  </form>
+
+  <p style="font-size:0.85rem;margin-top:20px;opacity:0.8;">We provide transparent pricing: Sourcing + Inventory + Global Shipping.</p>
+</div>
+
+<style>
+.wf-form-box { background:linear-gradient(318deg,#242a56 0%,#1d4ed8 100%); box-shadow:0 25px 50px -12px rgba(37, 99, 235,0.4); border:1px solid rgba(255,255,255,0.1); padding:60px 20px; border-radius:20px; text-align:center; color:#fff; max-width:900px; margin:60px auto; }
+.wf-form-box h2 { color:#fff; }
+.wf-form-box p { color:#dbeafe; }
+.wf-cf7-form { display:grid; grid-template-columns:1fr 1fr; gap:15px; text-align:left; max-width:750px; margin:0 auto; }
+.form-group { position:relative; }
+.form-full { grid-column:1 / -1; }
+.form-submit { grid-column:1 / -1; text-align:center; margin-top:10px; }
+.wf-cf7-form input[type="text"],
+.wf-cf7-form input[type="email"],
+.wf-cf7-form textarea,
+.wf-cf7-form select { width:100%; background:#fff; border:1px solid transparent; border-radius:12px; padding:15px 20px; font-size:1rem; color:#333; outline:none; box-shadow:0 4px 6px rgba(0,0,0,0.05); transition:0.3s ease; font-family:'Inter',system-ui,-apple-system,sans-serif; box-sizing:border-box; }
+.wf-cf7-form input::placeholder,
+.wf-cf7-form textarea::placeholder { color:#94a3b8; opacity:1; }
+.wf-cf7-form input:focus,
+.wf-cf7-form textarea:focus,
+.wf-cf7-form select:focus { box-shadow:0 0 0 3px rgba(255,255,255,0.3); transform:translateY(-2px); }
+.wf-cf7-form select { appearance:none; background-image:url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236878d6%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat:no-repeat; background-position:right 15px top 50%; background-size:12px auto; color:#64748b; }
+.wf-cf7-form textarea { resize:vertical; min-height:100px; }
+.wf-form-submit-btn { background:#fff; color:#2563eb; font-weight:800; text-transform:uppercase; border-radius:50px; padding:16px 48px; border:none; cursor:pointer; transition:all 0.3s ease; box-shadow:0 10px 20px rgba(0,0,0,0.15); font-size:0.95rem; letter-spacing:0.5px; }
+.wf-form-submit-btn:hover { transform:translateY(-3px) scale(1.05); box-shadow:0 15px 30px rgba(0,0,0,0.2); background:#f8fafc; }
+@media (max-width:576px) { .wf-cf7-form { grid-template-columns:1fr; } }
+</style>

@@ -1,0 +1,104 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import { comparisons } from '../../data/comparisons';
+---
+
+<BaseLayout
+  title="Comparisons - China Fulfillment vs Other Dropshipping Solutions"
+  description="In-depth comparisons of China fulfillment options: private agent vs CJdropshipping, HyperSKU, and traditional AliExpress dropshipping. Find the best fulfillment solution for your e-commerce business."
+  keywords="CJdropshipping vs private agent, HyperSKU vs private agent, Shopify fulfillment vs dropshipping, China fulfillment comparison, dropshipping platform comparison, best dropshipping fulfillment"
+>
+  <Header slot="header" />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h1>Comparisons</h1>
+        <p>Head-to-head comparisons to help you choose the right fulfillment solution</p>
+      </div>
+
+      <div class="grid-2">
+        {comparisons.map(comp => (
+          <a href={`/comparisons/${comp.slug}/`} class="card content-card">
+            <div class="compare-banner">
+              <span class="vs-item">{comp.compareItems[0]}</span>
+              <span class="vs-text">vs</span>
+              <span class="vs-item">{comp.compareItems[1]}</span>
+            </div>
+            <div class="card-body">
+              <div class="content-meta">
+                <span>{comp.date}</span>
+                <span>{comp.readTime}</span>
+                <span class="content-category">{comp.category}</span>
+              </div>
+              <h3>{comp.title}</h3>
+              <p>{comp.description}</p>
+              <span class="card-link">Read Comparison &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <InquiryForm />
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .content-card {
+    border: 1px solid var(--color-border);
+    transition: all var(--transition);
+  }
+  .content-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    color: inherit;
+  }
+  .compare-banner {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .vs-text {
+    background: rgba(255,255,255,0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  .content-meta {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    flex-wrap: wrap;
+  }
+  .content-category {
+    background: rgba(249,115,22,0.1);
+    color: var(--color-accent);
+    padding: 0.15rem 0.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+  .card-body h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+  .card-body p { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 0; }
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+  }
+</style>

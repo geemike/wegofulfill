@@ -1,0 +1,148 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+---
+
+<BaseLayout
+  title="Resources - Dropshipping Guides, Comparisons & Case Studies"
+  description="Free resources for dropshippers and e-commerce sellers: step-by-step guides, head-to-head fulfillment comparisons, real case studies, and FAQ. Learn how to source, fulfill, and ship from China."
+  keywords="dropshipping resources, China fulfillment resources, ecommerce guides, dropshipping comparisons, fulfillment case studies, selling from China"
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="resources-hero">
+    <div class="container">
+      <h1>Free Resources for Dropshippers</h1>
+      <p>Everything you need to master China fulfillment - guides, comparisons, case studies, and FAQs</p>
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <section class="section">
+    <div class="container">
+      <div class="resources-grid">
+        <a href="/guides/" class="resource-card resource-guides">
+          <div class="resource-icon">&#128214;</div>
+          <h2>Guides</h2>
+          <p>Step-by-step tutorials on dropshipping from China, Shopify fulfillment, Single SKU strategies, and scaling your store. Perfect for beginners and intermediate sellers.</p>
+          <span class="resource-count">4 articles</span>
+          <span class="resource-link">Browse Guides &rarr;</span>
+        </a>
+
+        <a href="/comparisons/" class="resource-card resource-comparisons">
+          <div class="resource-icon">&#9878;&#65039;</div>
+          <h2>Comparisons</h2>
+          <p>Head-to-head comparisons of fulfillment options: private agents vs CJdropshipping, HyperSKU, and traditional AliExpress dropshipping. Data-driven insights to choose the best solution.</p>
+          <span class="resource-count">3 articles</span>
+          <span class="resource-link">Browse Comparisons &rarr;</span>
+        </a>
+
+        <a href="/case-studies/" class="resource-card resource-cases">
+          <div class="resource-icon">&#128202;</div>
+          <h2>Case Studies</h2>
+          <p>Real stories of Shopify stores that scaled from 50 to 500+ orders per day using China fulfillment. See the strategies, results, and lessons learned.</p>
+          <span class="resource-count">3 articles</span>
+          <span class="resource-link">Browse Case Studies &rarr;</span>
+        </a>
+
+        <a href="/blog/" class="resource-card resource-blog">
+          <div class="resource-icon">&#128221;</div>
+          <h2>Blog</h2>
+          <p>Additional articles on product sourcing, shipping times, quality control, and fulfillment tips from our team in Shenzhen, China.</p>
+          <span class="resource-count">4 articles</span>
+          <span class="resource-link">Browse Blog &rarr;</span>
+        </a>
+
+        <a href="/faq/" class="resource-card resource-faq">
+          <div class="resource-icon">&#10068;</div>
+          <h2>FAQ</h2>
+          <p>Answers to the most common questions about China fulfillment, pricing, MOQs, shipping times, platform integrations, and getting started with WegoFulfill.</p>
+          <span class="resource-count">12 questions</span>
+          <span class="resource-link">View FAQ &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <InquiryForm
+    title="Need Personalized Help?"
+    subtitle="Not sure which fulfillment solution is right for you? Send us your product details and we&apos;ll help you choose."
+    variant="light"
+  />
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .resources-hero {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .resources-hero h1 { color: #fff; font-size: 2.25rem; margin-bottom: 0.75rem; }
+  .resources-hero p { color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .resource-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    transition: all var(--transition);
+  }
+  .resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    color: inherit;
+  }
+  .resource-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .resource-card h2 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .resource-card p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+  .resource-count {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    background: var(--color-bg-alt);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+  }
+  .resource-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+  }
+  .resource-card:hover .resource-link { color: var(--color-primary); }
+
+  .resource-guides:hover { border-color: var(--color-primary); }
+  .resource-comparisons:hover { border-color: #8b5cf6; }
+  .resource-cases:hover { border-color: #059669; }
+  .resource-blog:hover { border-color: var(--color-accent); }
+  .resource-faq:hover { border-color: #0ea5e9; }
+
+  @media (max-width: 992px) {
+    .resources-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 576px) {
+    .resources-grid { grid-template-columns: 1fr; }
+    .resources-hero h1 { font-size: 1.75rem; }
+    .resources-hero p { font-size: 1rem; }
+  }
+</style>

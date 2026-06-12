@@ -1,0 +1,106 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Refund & Reshipment Policy - WegoFulfill"
+  description="WegoFulfill refund and reshipment policy. Learn about our lost package compensation, damaged item replacement, return handling, and dispute resolution process."
+  keywords="refund policy, reshipment policy, lost package compensation, damaged item replacement, China fulfillment returns"
+>
+  <Header slot="header" />
+
+  <section class="section">
+    <div class="container policy-container">
+      <h1>Refund &amp; Reshipment Policy</h1>
+      <p class="last-updated">Last updated: January 2026</p>
+
+      <p>At WegoFulfill, we stand behind our fulfillment services. This policy outlines how we handle lost packages, damaged items, returns, and reshipments.</p>
+
+      <h2>Lost Package Compensation</h2>
+      <p>If a package is confirmed lost in transit by the carrier, we offer the following compensation:</p>
+      <ul>
+        <li><strong>Free Reshipment:</strong> We will reship the same products at no additional cost to you. The replacement order is processed and shipped within 24-48 hours.</li>
+        <li><strong>Full Refund:</strong> If you prefer not to reship, we will refund the product cost and shipping fee for the lost package.</li>
+      </ul>
+      <p>A package is considered lost if the tracking shows no movement for 30+ days (depending on the carrier and destination).</p>
+
+      <h2>Damaged Items</h2>
+      <p>We take quality control seriously, but in the rare event a customer receives a damaged item:</p>
+      <ul>
+        <li>We require photo or video evidence of the damage within 7 days of delivery.</li>
+        <li>Upon verification, we provide a full refund for the damaged item(s) or a free reshipment.</li>
+        <li>If the damage is due to carrier handling, we file a claim with the carrier on your behalf.</li>
+      </ul>
+
+      <h2>Quality Issues</h2>
+      <p>If a customer reports quality issues (wrong item, wrong color, manufacturing defect):</p>
+      <ul>
+        <li>We review the issue and compare with our quality control records.</li>
+        <li>For confirmed quality issues, we offer replacement or refund.</li>
+        <li>We work with our suppliers to address recurring quality problems at the source.</li>
+      </ul>
+
+      <h2>Returns Handling</h2>
+      <p>We support return handling for your customers:</p>
+      <ul>
+        <li><strong>Return Labels:</strong> We can generate return labels for your customers (availability depends on destination country).</li>
+        <li><strong>Return Address:</strong> Returns are sent back to our Shenzhen warehouse for inspection.</li>
+        <li><strong>Inspection:</strong> Returned items are inspected upon arrival. We assess condition for restocking, repair, or disposal.</li>
+        <li><strong>Processing Time:</strong> Returns are processed within 3-5 business days of arrival at our warehouse.</li>
+      </ul>
+
+      <h2>Reshipment Service</h2>
+      <p>When a reshipment is needed (lost package, damage, or customer exchange):</p>
+      <ul>
+        <li>Reshipments are prioritized and dispatched within 24-48 hours of confirmation.</li>
+        <li>Tracking numbers are automatically synced to your store.</li>
+        <li>Reshipment shipping costs are covered by us for confirmed lost/damaged cases.</li>
+        <li>For customer-requested exchanges (wrong size, change of mind), standard fulfillment and shipping fees apply.</li>
+      </ul>
+
+      <h2>Dispute Resolution</h2>
+      <p>If a customer disputes a charge with their payment provider or platform:</p>
+      <ul>
+        <li>We provide tracking evidence, delivery confirmation, and quality control records to support your case.</li>
+        <li>We assist with documentation and evidence gathering for chargeback disputes.</li>
+        <li>Response time for dispute-related inquiries is within 24 hours on business days.</li>
+      </ul>
+
+      <h2>Non-Covered Circumstances</h2>
+      <p>The following situations are not covered by our compensation policy:</p>
+      <ul>
+        <li>Incorrect shipping address provided by the seller or customer.</li>
+        <li>Customs delays or rejections (except for DDP shipments where we handle customs).</li>
+        <li>Force majeure events (natural disasters, pandemics, government actions).</li>
+        <li>Customer change of mind after a correctly fulfilled order.</li>
+      </ul>
+
+      <h2>How to Submit a Claim</h2>
+      <p>To submit a claim for a lost package, damaged item, or quality issue:</p>
+      <ol>
+        <li>Contact your dedicated support representative via WhatsApp or Discord.</li>
+        <li>Provide the order number and a description of the issue.</li>
+        <li>Include photos/videos if applicable.</li>
+        <li>We will respond within 24 hours on business days with a resolution.</li>
+      </ol>
+
+      <h2>Contact Us</h2>
+      <p>For any questions about this policy, please contact us at <a href="mailto:support@wegofulfill.com">support@wegofulfill.com</a> or WhatsApp +86 199 2524 7178.</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .policy-container { max-width: 800px; }
+  .policy-container h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .last-updated { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 2rem; }
+  .policy-container h2 { font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border); }
+  .policy-container p { line-height: 1.8; margin-bottom: 1rem; color: var(--color-text); }
+  .policy-container ul, .policy-container ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+  .policy-container li { margin-bottom: 0.5rem; line-height: 1.7; color: var(--color-text); }
+  @media (max-width: 576px) { .policy-container h1 { font-size: 1.5rem; } }
+</style>

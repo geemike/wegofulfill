@@ -1,0 +1,107 @@
+---
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services/', label: 'Services' },
+  { href: '/resources/', label: 'Resources' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/about/', label: 'About' },
+];
+---
+<header class="header">
+  <div class="container header-inner">
+    <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <a href="/" class="logo" aria-label="WegoFulfill Home">
+      <span class="logo-text">Wego<span class="logo-accent">Fulfill</span></span>
+    </a>
+    <a href="/contact/" class="btn btn-primary header-cta">Get a Quote</a>
+    <a href="/contact/" class="btn btn-primary header-cta-mobile">Quote</a>
+  </div>
+</header>
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    gap: 2rem;
+  }
+  .logo { text-decoration: none; }
+  .logo-text { font-size: 1.5rem; font-weight: 800; color: var(--color-primary-dark); }
+  .nav-list { display: flex; gap: 0.25rem; }
+  .nav-link {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    transition: all var(--transition);
+  }
+  .nav-link:hover, .nav-link.active { color: var(--color-primary); background: var(--color-bg-alt); }
+  .nav-link.active { font-weight: 600; }
+  .header-cta { padding: 10px 28px; font-size: 0.9rem; border-radius: 100px; font-weight: 700; background: #2563eb; box-shadow: 0 4px 12px rgba(37, 99, 235,0.25); }
+  .header-cta-mobile { display: none; }
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--color-text); border-radius: 2px; transition: all var(--transition); }
+  @media (max-width: 768px) {
+    .header-inner { gap: 0.75rem; }
+    .nav { display: none; }
+    .header-cta { display: none; }
+    .header-cta-mobile { display: inline-flex; padding: 8px 16px; font-size: 0.8rem; border-radius: 100px; font-weight: 700; background: #2563eb; white-space: nowrap; }
+    .logo { flex: 1; text-align: center; display: flex; justify-content: center; }
+    .mobile-toggle { display: flex; }
+    .nav.open {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem;
+      z-index: 999;
+    }
+    .nav.open .nav-list { flex-direction: column; }
+  }
+</style>
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('.nav');
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(nav?.classList.contains('open')));
+  });
+</script>

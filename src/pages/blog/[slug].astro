@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import { posts } from '../../data/posts';
+
+export function getStaticPaths() {
+ return posts.map(post => ({
+ params: { slug: post.slug },
+ props: { post },
+ }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout
+ title={post.title}
+ description={post.description}
+ keywords={`${post.category}, ${post.title}, China fulfillment, dropshipping, sourcing from China, ecommerce logistics`}
+ pageType="article"
+>
+ <Header slot="header" />
+
+ <article class="section">
+ <div class="container blog-container">
+ <nav class="breadcrumb" aria-label="Breadcrumb">
+ <a href="/">Home</a> &rsaquo; <a href="/blog/">Blog</a> &rsaquo; <span>{post.title}</span>
+ </nav>
+
+ <header class="blog-header">
+ <div class="blog-meta">
+ <span>{post.date}</span>
+ <span>{post.readTime}</span>
+ <span class="blog-category">{post.category}</span>
+ </div>
+ <h1>{post.title}</h1>
+ <p class="blog-desc">{post.description}</p>
+ <span class="blog-author">By {post.author}</span>
+ </header>
+
+ <div class="blog-content" set:html={post.content} />
+ </div>
+ </article>
+
+ <InquiryForm
+ title="Need Help with China Fulfillment?"
+ subtitle="Get a free quote for sourcing, fulfillment, and shipping from China."
+ />
+
+ <!-- Article JSON-LD -->
+ <script type="application/ld+json" set:html={JSON.stringify({
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": post.title,
+ "description": post.description,
+ "datePublished": post.date,
+ "author": {
+ "@type": "Organization",
+ "name": post.author
+ },
+ "publisher": {
+ "@type": "Organization",
+ "name": "WegoFulfill",
+ "logo": {
+ "@type": "ImageObject",
+ "url": "https://www.wegofulfill.com/images/logo.png"
+ }
+ }
+ })} />
+
+ <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+ .blog-container { max-width: 800px; }
+ .breadcrumb { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 2rem; }
+ .breadcrumb a { color: var(--color-primary); }
+
+ .blog-header { margin-bottom: 3rem; }
+ .blog-meta {
+ display: flex;
+ gap: 1rem;
+ margin-bottom: 1rem;
+ font-size: 0.9rem;
+ color: var(--color-text-light);
+ }
+ .blog-category {
+ background: rgba(249,115,22,0.1);
+ color: var(--color-accent);
+ padding: 0.2rem 0.75rem;
+ border-radius: 50px;
+ font-weight: 600;
+ }
+ .blog-header h1 { font-size: 2.25rem; margin-bottom: 1rem; }
+ .blog-desc { font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; }
+ .blog-author { display: block; margin-top: 0.75rem; font-size: 0.9rem; color: var(--color-text-light); font-weight: 500; }
+
+ .blog-content { line-height: 1.9; }
+ .blog-content h2 { margin: 2.5rem 0 1rem; }
+ .blog-content p { margin-bottom: 1.25rem; color: var(--color-text); }
+ @media (max-width: 768px) {
+ .blog-header h1 { font-size: 1.75rem; }
+ }
+ @media (max-width: 576px) {
+ .blog-container { padding: 0 0.5rem; }
+ .blog-header h1 { font-size: 1.5rem; }
+ .blog-desc { font-size: 1rem; }
+ .blog-content { font-size: 0.95rem; }
+ .blog-content h2 { font-size: 1.25rem; }
+ }
+</style>

@@ -1,0 +1,116 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Terms of Service - WegoFulfill"
+  description="WegoFulfill terms of service. Read the terms and conditions for using our China fulfillment, product sourcing, warehousing, and shipping services."
+  keywords="terms of service, WegoFulfill terms, fulfillment terms, service agreement, China fulfillment conditions"
+>
+  <Header slot="header" />
+
+  <section class="section">
+    <div class="container policy-container">
+      <h1>Terms of Service</h1>
+      <p class="last-updated">Last updated: January 2026</p>
+
+      <p>These Terms of Service ("Terms") govern your use of WegoFulfill's website and fulfillment services. By using our services, you agree to these Terms.</p>
+
+      <h2>1. Services Overview</h2>
+      <p>WegoFulfill provides the following services from our Shenzhen, China facility:</p>
+      <ul>
+        <li>Product sourcing from Chinese factories and suppliers</li>
+        <li>Quality control and product inspection</li>
+        <li>Warehousing and inventory storage</li>
+        <li>Order fulfillment (pick, pack, and ship)</li>
+        <li>International shipping via multiple carriers</li>
+        <li>Returns management and reshipment</li>
+      </ul>
+
+      <h2>2. Account & Communication</h2>
+      <p>To use our services, you must provide accurate and complete information. We communicate primarily through WhatsApp, email, and Discord. You are responsible for maintaining the confidentiality of your account information.</p>
+
+      <h2>3. Pricing & Payment</h2>
+      <ul>
+        <li>All pricing is provided on a per-quote basis. We provide transparent cost breakdowns including product cost, fulfillment fee, and shipping charges.</li>
+        <li>No monthly or subscription fees are charged. You pay per order.</li>
+        <li>Payment methods: PayPal, Payoneer, Wise, and bank transfer. Payment terms are agreed upon during onboarding.</li>
+        <li>Prices are subject to change based on supplier pricing, shipping rate fluctuations, and currency exchange rates. We will notify you of any significant changes.</li>
+      </ul>
+
+      <h2>4. Order Processing</h2>
+      <ul>
+        <li>Orders received before our daily cutoff time are processed and dispatched within 24 hours (excluding Sundays and holidays).</li>
+        <li>We process orders based on the information provided. You are responsible for ensuring order details are accurate.</li>
+        <li>We reserve the right to refuse orders that violate applicable laws or carrier restrictions.</li>
+      </ul>
+
+      <h2>5. Shipping & Delivery</h2>
+      <ul>
+        <li>Shipping times are estimates and not guaranteed. Actual delivery times may vary due to customs, weather, carrier delays, or force majeure events.</li>
+        <li>We select carriers based on the optimal balance of speed and cost for each destination, unless you specify a preferred carrier.</li>
+        <li>Tracking numbers are provided for all shipments and automatically synced to your store where integration is available.</li>
+        <li>Please refer to our <a href="/shipping-delivery/">Shipping &amp; Delivery</a> page for detailed information.</li>
+      </ul>
+
+      <h2>6. Quality Control</h2>
+      <ul>
+        <li>All products undergo visual inspection before shipping. Functionality testing is performed for applicable products.</li>
+        <li>We inspect for visible defects, correct quantities, and packaging integrity. We do not perform laboratory or material testing.</li>
+        <li>Quality issues should be reported within 7 days of delivery with supporting evidence.</li>
+      </ul>
+
+      <h2>7. Intellectual Property</h2>
+      <ul>
+        <li>You retain all rights to your brand, trademarks, and product designs.</li>
+        <li>We do not claim ownership of your products, packaging designs, or branding elements.</li>
+        <li>You are responsible for ensuring your products and branding do not infringe on third-party intellectual property rights.</li>
+      </ul>
+
+      <h2>8. Limitation of Liability</h2>
+      <ul>
+        <li>WegoFulfill's liability is limited to the value of the order in question (product cost + fulfillment fee + shipping).</li>
+        <li>We are not liable for indirect, consequential, or incidental damages, including lost profits or business interruption.</li>
+        <li>We are not liable for delays or failures caused by circumstances beyond our reasonable control.</li>
+      </ul>
+
+      <h2>9. Termination</h2>
+      <p>Either party may terminate the service relationship with reasonable notice. Upon termination:</p>
+      <ul>
+        <li>All outstanding orders will be completed or refunded.</li>
+        <li>Remaining inventory will be returned or disposed of per your instructions.</li>
+        <li>Outstanding payments must be settled within 30 days.</li>
+      </ul>
+
+      <h2>10. Privacy</h2>
+      <p>Your use of our services is also governed by our <a href="/privacy/">Privacy Policy</a>, which explains how we collect, use, and protect your information.</p>
+
+      <h2>11. Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of material changes via email or through our communication channels. Continued use of our services after changes constitutes acceptance of the updated Terms.</p>
+
+      <h2>12. Governing Law</h2>
+      <p>These Terms are governed by the laws of the People's Republic of China. Any disputes shall be resolved through negotiation in good faith before pursuing legal remedies.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have questions about these Terms, please contact us at:</p>
+      <p>Email: <a href="mailto:support@wegofulfill.com">support@wegofulfill.com</a><br/>
+      WhatsApp: +86 199 2524 7178<br/>
+      Address: Longhua District, Shenzhen City, Guangdong Province, China</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .policy-container { max-width: 800px; }
+  .policy-container h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .last-updated { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 2rem; }
+  .policy-container h2 { font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border); }
+  .policy-container p { line-height: 1.8; margin-bottom: 1rem; color: var(--color-text); }
+  .policy-container ul { margin-bottom: 1rem; padding-left: 1.5rem; list-style: disc; }
+  .policy-container li { margin-bottom: 0.5rem; line-height: 1.7; color: var(--color-text); }
+  @media (max-width: 576px) { .policy-container h1 { font-size: 1.5rem; } }
+</style>

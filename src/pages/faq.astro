@@ -1,0 +1,150 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+ {
+ question: 'Do you have a monthly fee?',
+ answer: 'No. We don\'t charge any monthly or subscription fees. You only pay per order - covering sourcing, fulfillment handling, and shipping. There are no hidden costs.',
+ },
+ {
+ question: 'Is there a Minimum Order Quantity (MOQ)?',
+ answer: 'No MOQ. Many of our clients start with just a few orders per day and scale gradually. We also negotiate MOQs with Chinese suppliers on your behalf so you can test products without committing to large quantities.',
+ },
+ {
+ question: 'How do I pay?',
+ answer: 'We support PayPal, Payoneer, and Wise for payments. You can choose the method that works best for your business. Payment terms are flexible and can be discussed during onboarding.',
+ },
+ {
+ question: 'Can you handle multiple SKUs or mixed orders?',
+ answer: 'Yes. We handle multiple SKUs, mixed orders, and bundled shipments on a daily basis. Our warehouse team in Shenzhen is experienced with complex order compositions.',
+ },
+ {
+ question: 'How long does shipping take to the US, UK, and EU?',
+ answer: 'Via our fast shipping lines (YunExpress, CNE), delivery to the USA takes 5-8 days, UK 4-6 days, Germany/France 5-8 days, Australia 6-9 days, and Canada 7-10 days. Express options via DHL/FedEx are even faster.',
+ },
+ {
+ question: 'What is your product sourcing process?',
+ answer: 'Send us a product link or image from AliExpress, Amazon, or any platform. We find the same or better product directly directly from Chinese factories or Chinese factories, negotiate pricing, confirm availability, and send you a transparent quote.',
+ },
+ {
+ question: 'Do you offer quality control / product inspection?',
+ answer: 'Yes. Every product is visually inspected and functionally tested before shipping. We check packaging, remove defective items, and can add custom branding like logos, thank-you cards, and stickers.',
+ },
+ {
+ question: 'Which e-commerce platforms do you integrate with?',
+ answer: 'We integrate with Shopify, WooCommerce, TikTok Shop, and more. Orders can be synced automatically from your store, and tracking numbers are pushed back automatically. Manual order submission is also supported.',
+ },
+ {
+ question: 'Do you provide DDP (Delivered Duty Paid) shipping?',
+ answer: 'Yes, we offer DDP shipping options so your customers don\'t face unexpected customs charges. This helps improve customer satisfaction and reduces complaints about import fees.',
+ },
+ {
+ question: 'What happens if a package is lost or damaged?',
+ answer: 'We provide lost package compensation - either a free reshipment or refund. Our team handles the claim process with the carrier. For damaged items, we assist with returns and reshipment to keep your customers satisfied.',
+ },
+ {
+ question: 'How do I get started with WegoFulfill?',
+ answer: 'Simply contact us through our website form, WhatsApp, or email with your product details, expected order volume, and target countries. We\'ll send you a free quote with no commitment required. Onboarding typically takes 1-2 days.',
+ },
+ {
+ question: 'Where is your warehouse located?',
+ answer: 'Our warehouse is located in Longhua District, Shenzhen City, Guangdong Province, China. Shenzhen is one of China\'s largest export hubs, giving us direct access to factories and major shipping routes.',
+ },
+];
+---
+
+<BaseLayout
+ title="FAQ - Frequently Asked Questions About China Fulfillment & Dropshipping"
+ description="Common questions about WegoFulfill's China dropshipping and fulfillment services. Learn about pricing, MOQ, shipping times, quality control, platform integrations, and how to get started."
+ keywords="China dropshipping FAQ, fulfillment FAQ, China sourcing questions, dropshipping MOQ, China shipping times, 3PL FAQ, dropshipping agent questions, fulfillment pricing FAQ"
+>
+ <Header slot="header" />
+
+ <section class="section">
+ <div class="container faq-container">
+ <div class="section-title">
+ <h1>Frequently Asked Questions</h1>
+ <p>Everything you need to know about our China fulfillment and dropshipping services</p>
+ </div>
+
+ <div class="faq-list">
+ {faqs.map((faq, index) => (
+ <details class="faq-item">
+ <summary>
+ <span class="faq-num">{String(index + 1).padStart(2, '0')}</span>
+ <span>{faq.question}</span>
+ </summary>
+ <div class="faq-answer">
+ <p>{faq.answer}</p>
+ </div>
+ </details>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ <!-- FAQ JSON-LD -->
+ <script type="application/ld+json" set:html={JSON.stringify({
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": faqs.map(faq => ({
+ "@type": "Question",
+ "name": faq.question,
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": faq.answer
+ }
+ }))
+ })} />
+
+ <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+ .faq-container { max-width: 800px; }
+ .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+ .faq-item {
+ background: var(--color-bg);
+ border: 1px solid var(--color-border);
+ border-radius: var(--radius);
+ overflow: hidden;
+ }
+ .faq-item[open] { border-color: var(--color-primary); }
+ .faq-item summary {
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ padding: 1.25rem 1.5rem;
+ font-weight: 600;
+ cursor: pointer;
+ font-size: 1rem;
+ list-style: none;
+ }
+ .faq-item summary::-webkit-details-marker { display: none; }
+ .faq-item summary::after {
+ content: '+';
+ margin-left: auto;
+ font-size: 1.25rem;
+ color: var(--color-primary);
+ flex-shrink: 0;
+ }
+ .faq-item[open] summary::after { content: '\2212'; }
+ .faq-num { color: var(--color-accent); font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+ .faq-answer { padding: 0 1.5rem 1.25rem 3.5rem; }
+ .faq-answer p { color: var(--color-text-light); line-height: 1.8; }
+ @media (max-width: 576px) {
+ .faq-item summary {
+ padding: 1rem;
+ font-size: 0.9rem;
+ gap: 0.75rem;
+ }
+ .faq-answer {
+ padding: 0 1rem 1rem 2rem;
+ }
+ .faq-answer p {
+ font-size: 0.9rem;
+ }
+ }
+</style>

@@ -1,0 +1,96 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy - WegoFulfill"
+  description="WegoFulfill privacy policy. Learn how we collect, use, and protect your personal information when you use our China fulfillment and dropshipping services."
+  keywords="privacy policy, WegoFulfill privacy, data protection, China fulfillment privacy"
+>
+  <Header slot="header" />
+
+  <section class="section">
+    <div class="container policy-container">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: January 2026</p>
+
+      <p>WegoFulfill ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://wegofulfill.com">wegofulfill.com</a> or use our fulfillment services.</p>
+
+      <h2>Information We Collect</h2>
+      <p>We may collect the following types of information:</p>
+      <ul>
+        <li><strong>Personal Information:</strong> Name, email address, phone number, store URL, and shipping addresses when you submit an inquiry or place orders.</li>
+        <li><strong>Business Information:</strong> Product details, order volumes, supplier information, and fulfillment requirements shared during our service engagement.</li>
+        <li><strong>Technical Data:</strong> IP address, browser type, operating system, and usage data collected automatically when you visit our site.</li>
+        <li><strong>Communication Data:</strong> Messages sent through WhatsApp, email, or our contact forms.</li>
+      </ul>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use the collected information for the following purposes:</p>
+      <ul>
+        <li>To provide and manage our fulfillment services, including order processing, shipping, and tracking.</li>
+        <li>To communicate with you regarding quotes, orders, support inquiries, and service updates.</li>
+        <li>To process payments and manage billing.</li>
+        <li>To improve our website and services based on usage patterns and feedback.</li>
+        <li>To comply with legal obligations and enforce our terms of service.</li>
+      </ul>
+
+      <h2>Information Sharing</h2>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+      <ul>
+        <li><strong>Service Providers:</strong> With shipping carriers (e.g., YunExpress, DHL, FedEx) and logistics partners solely for the purpose of fulfilling your orders.</li>
+        <li><strong>Legal Compliance:</strong> When required by law, court order, or governmental regulation.</li>
+        <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of company assets.</li>
+        <li><strong>With Your Consent:</strong> When you explicitly authorize us to share your information.</li>
+      </ul>
+
+      <h2>Data Security</h2>
+      <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+
+      <h2>Data Retention</h2>
+      <p>We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy, or as required by law. Order and transaction records are retained for the duration of our business relationship and a reasonable period thereafter.</p>
+
+      <h2>Your Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+      <ul>
+        <li>Access: Request a copy of your personal data we hold.</li>
+        <li>Correction: Request correction of inaccurate or incomplete data.</li>
+        <li>Deletion: Request deletion of your personal data, subject to legal obligations.</li>
+        <li>Objection: Object to certain processing of your personal data.</li>
+      </ul>
+
+      <h2>Cookies</h2>
+      <p>Our website may use cookies and similar tracking technologies to enhance your browsing experience. You can control cookie settings through your browser preferences.</p>
+
+      <h2>Third-Party Links</h2>
+      <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of those websites. We encourage you to review their privacy policies.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of our services after changes constitutes acceptance.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have questions about this Privacy Policy, please contact us at:</p>
+      <p>Email: <a href="mailto:support@wegofulfill.com">support@wegofulfill.com</a><br/>
+      WhatsApp: +86 199 2524 7178<br/>
+      Address: Longhua District, Shenzhen City, Guangdong Province, China</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .policy-container { max-width: 800px; }
+  .policy-container h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .last-updated { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 2rem; }
+  .policy-container h2 { font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border); }
+  .policy-container p { line-height: 1.8; margin-bottom: 1rem; color: var(--color-text); }
+  .policy-container ul { margin-bottom: 1rem; padding-left: 1.5rem; list-style: disc; }
+  .policy-container li { margin-bottom: 0.5rem; line-height: 1.7; color: var(--color-text); }
+  @media (max-width: 576px) { .policy-container h1 { font-size: 1.5rem; } }
+</style>

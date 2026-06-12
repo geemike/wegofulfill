@@ -1,0 +1,117 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import { comparisons } from '../../data/comparisons';
+
+export function getStaticPaths() {
+  return comparisons.map(comp => ({
+    params: { slug: comp.slug },
+    props: { comp },
+  }));
+}
+
+const { comp } = Astro.props;
+---
+
+<BaseLayout
+  title={comp.title}
+  description={comp.description}
+  keywords={`${comp.compareItems.join(' vs ')}, China fulfillment comparison, dropshipping platform comparison, best fulfillment solution`}
+  pageType="article"
+>
+  <Header slot="header" />
+
+  <article class="section">
+    <div class="container content-container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo; <a href="/comparisons/">Comparisons</a> &rsaquo; <span>{comp.title}</span>
+      </nav>
+
+      <header class="content-header">
+        <div class="content-meta">
+          <span>{comp.date}</span>
+          <span>{comp.readTime}</span>
+          <span class="content-category">{comp.category}</span>
+        </div>
+        <h1>{comp.title}</h1>
+        <p class="content-desc">{comp.description}</p>
+        <span class="content-author">By {comp.author}</span>
+      </header>
+
+      <div class="content-body" set:html={comp.content} />
+    </div>
+  </article>
+
+  <InquiryForm
+    title="Want to Compare Your Options?"
+    subtitle="Get a free quote and see how WegoFulfill stacks up for your specific needs."
+  />
+
+  <!-- Article JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": comp.title,
+    "description": comp.description,
+    "datePublished": comp.date,
+    "articleSection": "Comparisons",
+    "author": {
+      "@type": "Organization",
+      "name": comp.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "WegoFulfill",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.wegofulfill.com/images/logo.png"
+      }
+    }
+  })} />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .content-container { max-width: 800px; }
+  .breadcrumb { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 2rem; }
+  .breadcrumb a { color: var(--color-primary); }
+
+  .content-header { margin-bottom: 3rem; }
+  .content-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    flex-wrap: wrap;
+  }
+  .content-category {
+    background: rgba(249,115,22,0.1);
+    color: var(--color-accent);
+    padding: 0.2rem 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+  .content-header h1 { font-size: 2.25rem; margin-bottom: 1rem; }
+  .content-desc { font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; }
+  .content-author { display: block; margin-top: 0.75rem; font-size: 0.9rem; color: var(--color-text-light); font-weight: 500; }
+
+  .content-body { line-height: 1.9; }
+  .content-body h2 { margin: 2.5rem 0 1rem; font-size: 1.5rem; }
+  .content-body h3 { margin: 1.5rem 0 0.75rem; font-size: 1.2rem; }
+  .content-body p { margin-bottom: 1.25rem; color: var(--color-text); }
+  .content-body ul { margin-bottom: 1.25rem; padding-left: 1.5rem; list-style: disc; }
+  .content-body li { margin-bottom: 0.5rem; color: var(--color-text); }
+  .content-body table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+  .content-body th, .content-body td { padding: 0.75rem 1rem; text-align: left; border: 1px solid var(--color-border); }
+  .content-body th { background: var(--color-bg-alt); font-weight: 700; }
+  .content-body strong { color: var(--color-primary-dark); }
+  @media (max-width: 576px) {
+    .content-header h1 { font-size: 1.5rem; }
+    .content-body { font-size: 0.95rem; }
+    .content-body h2 { font-size: 1.25rem; }
+  }
+</style>

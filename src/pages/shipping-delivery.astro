@@ -1,0 +1,88 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Shipping & Delivery - WegoFulfill"
+  description="Global shipping information from WegoFulfill. Fast, tracked, and reliable delivery to 200+ countries. Estimated delivery times, carriers used, and processing details."
+  keywords="China shipping times, international shipping from China, YunExpress, DHL, fulfillment shipping, delivery times China to US, China to UK shipping"
+>
+  <Header slot="header" />
+
+  <section class="section">
+    <div class="container policy-container">
+      <h1>Global Shipping Information</h1>
+      <p class="lead-text">Fast, tracked, and reliable shipping to over 200+ countries.</p>
+
+      <h2>Estimated Delivery Times</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Destination</th><th>Average Time (Special Line)</th><th>Carriers Used</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>&#127482;&#127480; United States</td><td>5 - 8 Days</td><td>YunExpress, Wanb, Yanwen, 4PX</td></tr>
+            <tr><td>&#127468;&#127463; United Kingdom</td><td>4 - 6 Days</td><td>Wanb, Yanwen, YunExpress, 4PX</td></tr>
+            <tr><td>&#127465;&#127466; Germany</td><td>5 - 8 Days</td><td>Wanb, Yanwen, YunExpress, 4PX</td></tr>
+            <tr><td>&#127467;&#127479; France</td><td>5 - 8 Days</td><td>Wanb, Yanwen, YunExpress, 4PX</td></tr>
+            <tr><td>&#127464;&#127462; Canada</td><td>7 - 10 Days</td><td>YunExpress, Wanb, Yanwen, 4PX</td></tr>
+            <tr><td>&#127462;&#127482; Australia</td><td>6 - 9 Days</td><td>YunExpress, Wanb, Yanwen, 4PX</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Processing Time</h2>
+      <p>All orders are processed and dispatched from our warehouse within <strong>24 hours</strong> (excluding Sundays and holidays).</p>
+
+      <h2>Sensitive Products</h2>
+      <p>We have special logistics lines for:</p>
+      <ul>
+        <li><strong>Liquids &amp; Creams</strong> (Cosmetics)</li>
+        <li><strong>Electronics</strong> (Items with internal batteries)</li>
+        <li><strong>Knives &amp; Sharp Objects</strong> (Kitchenware)</li>
+      </ul>
+
+      <h2>Tracking</h2>
+      <p>Tracking numbers are automatically synced to your store (Shopify / WooCommerce). Customers can track parcels via 17Track or your store's tracking page.</p>
+
+      <h2>Available Carriers</h2>
+      <p>We partner with multiple carriers to ensure optimal delivery speed and cost for each destination:</p>
+      <ul>
+        <li><strong>YunExpress</strong> &mdash; Fast special line to US, UK, EU, AU</li>
+        <li><strong>WanbExpress</strong> &mdash; Reliable line for EU and UK</li>
+        <li><strong>Yanwen</strong> &mdash; Cost-effective global coverage</li>
+        <li><strong>4PX</strong> &mdash; Global logistics provider</li>
+        <li><strong>DHL</strong> &mdash; Express delivery worldwide (3-5 days)</li>
+        <li><strong>FedEx</strong> &mdash; Premium express service</li>
+      </ul>
+
+      <h2>DDP (Delivered Duty Paid)</h2>
+      <p>We offer DDP shipping options to many countries. With DDP, all customs duties and taxes are prepaid, so your customers receive their orders without unexpected charges.</p>
+
+      <h2>Lost or Damaged Packages</h2>
+      <p>In the rare event a package is lost or damaged in transit, we provide compensation - either a free reshipment or refund. See our <a href="/refund-reshipment/">Refund &amp; Reshipment Policy</a> for full details.</p>
+
+      <h2>Questions?</h2>
+      <p>Contact us at <a href="mailto:support@wegofulfill.com">support@wegofulfill.com</a> or WhatsApp +86 199 2524 7178 for any shipping inquiries.</p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .policy-container { max-width: 800px; }
+  .policy-container h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .lead-text { font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 2rem; }
+  .policy-container h2 { font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border); }
+  .policy-container p { line-height: 1.8; margin-bottom: 1rem; color: var(--color-text); }
+  .policy-container ul { margin-bottom: 1rem; padding-left: 1.5rem; list-style: disc; }
+  .policy-container li { margin-bottom: 0.5rem; line-height: 1.7; color: var(--color-text); }
+  .table-wrap { overflow-x: auto; margin-bottom: 2rem; }
+  .policy-container table { width: 100%; border-collapse: collapse; }
+  .policy-container th, .policy-container td { padding: 0.75rem 1rem; text-align: left; border: 1px solid var(--color-border); }
+  .policy-container th { background: var(--color-bg-alt); font-weight: 700; }
+  @media (max-width: 576px) { .policy-container h1 { font-size: 1.5rem; } }
+</style>
