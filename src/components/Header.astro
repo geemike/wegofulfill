@@ -10,9 +10,9 @@ const navLinks = [
 ---
 <header class="header">
   <div class="container header-inner">
-    <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="/" class="logo" aria-label="WegoFulfill Home">
+      <span class="logo-text">Wego<span class="logo-accent">Fulfill</span></span>
+    </a>
     <nav class="nav" aria-label="Main navigation">
       <ul class="nav-list">
         {navLinks.map(link => (
@@ -27,11 +27,11 @@ const navLinks = [
         ))}
       </ul>
     </nav>
-    <a href="/" class="logo" aria-label="WegoFulfill Home">
-      <span class="logo-text">Wego<span class="logo-accent">Fulfill</span></span>
-    </a>
     <a href="/contact/" class="btn btn-primary header-cta">Get a Quote</a>
     <a href="/contact/" class="btn btn-primary header-cta-mobile">Quote</a>
+    <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 <style>
@@ -76,23 +76,20 @@ const navLinks = [
     padding: 4px;
   }
   .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--color-text); border-radius: 2px; transition: all var(--transition); }
+
   @media (max-width: 768px) {
-    .header-inner { gap: 0.75rem; }
-    .nav { display: none; }
+    .header-inner { gap: 0.75rem; flex-wrap: nowrap; }
+    /* Mobile order: hamburger(1) | logo(2) | quote(3) */
+    .logo { order: 2; flex: 1; text-align: center; }
+    .nav { display: none; order: 4; }
     .header-cta { display: none; }
-    .header-cta-mobile { display: inline-flex; padding: 8px 16px; font-size: 0.8rem; border-radius: 100px; font-weight: 700; background: #2563eb; white-space: nowrap; }
-    .logo { flex: 1; text-align: center; display: flex; justify-content: center; }
-    .mobile-toggle { display: flex; }
+    .header-cta-mobile { display: inline-flex; order: 3; padding: 8px 16px; font-size: 0.8rem; border-radius: 100px; font-weight: 700; background: #2563eb; white-space: nowrap; flex-shrink: 0; }
+    .mobile-toggle { display: flex; order: 1; flex-shrink: 0; }
     .nav.open {
       display: block;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--color-bg);
-      border-bottom: 1px solid var(--color-border);
-      padding: 1rem;
-      z-index: 999;
+      order: 5;
+      width: 100%;
+      flex-basis: 100%;
     }
     .nav.open .nav-list { flex-direction: column; }
   }
