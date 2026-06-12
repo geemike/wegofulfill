@@ -1,4 +1,4 @@
-﻿---
+---
 interface Props {
  title: string;
  description: string;
@@ -21,6 +21,7 @@ const siteName = 'WegoFulfill';
 const fullTitle = title === 'Home' ? `${siteName} - China Dropshipping Agent & Fulfillment Partner` : `${title} | ${siteName}`;
 
 import '../styles/global.css';
+import SpeedInsights from '@vercel/speed-insights/astro';
 ---
 
 <!doctype html>
@@ -55,6 +56,8 @@ import '../styles/global.css';
  <link rel="preconnect" href="https://fonts.googleapis.com" />
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+ <SpeedInsights />
 
  <!-- Organization + LocalBusiness Structured Data with GEO -->
  <script type="application/ld+json" set:html={JSON.stringify({
