@@ -8,7 +8,7 @@ import { faqSchema } from '../lib/schema';
 
 <BaseLayout
   title="China Fulfillment Partner for Shopify Sellers"
-  description="WegoFulfill is your China Fulfillment Partner for Shopify sellers. We handle product sourcing, quality control, warehousing, and global shipping from Shenzhen. No MOQ, 1-2 day processing, 5-10 day delivery. Get a free quote today."
+  description="Your China Fulfillment Partner for Shopify. We source, inspect, and ship from Shenzhen — 5-10 day global delivery, no MOQ, no monthly fees."
   keywords="China fulfillment partner, China fulfillment center, Shopify fulfillment partner, China dropshipping agent, China 3PL fulfillment, Shenzhen fulfillment, product sourcing China, dropshipping fulfillment services"
   breadcrumbs={[{ name: 'Home', url: '/' }]}
   schema={[faqSchema([
@@ -159,7 +159,7 @@ import { faqSchema } from '../lib/schema';
           </ul>
         </div>
         <div class="promise-img">
-          <img src="/images/wegofulfill-team.jpg" alt="WegoFulfill Team" loading="lazy" />
+          <img src="/images/wegofulfill-team.jpg" alt="WegoFulfill Team in Shenzhen warehouse" width="600" height="400" loading="lazy" />
         </div>
       </div>
     </div>
@@ -450,4 +450,8 @@ import { faqSchema } from '../lib/schema';
   .cfp-cta-content h2 { color: #fff; font-size: 2rem; margin-bottom: 1rem; }
   .cfp-cta-content p { color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
   .cfp-cta-content .btn { background: #fff; color: #2563eb; font-weight: 700; }
+.data-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); border-radius: var(--radius); color: #fff; }
+  .data-item strong { display: block; font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+  .data-item span { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
+  @media (max-width: 768px) { .data-band { grid-template-columns: repeat(2, 1fr); } }
 </style>

@@ -8,5 +8,9 @@ export default defineConfig({
     assets: 'assets',
   },
   compressHTML: true,
-  integrations: [sitemap()],
+  integrations: [sitemap({
+      serialize(item) {
+        return item;
+      }
+    })],
 });
