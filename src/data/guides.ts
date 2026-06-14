@@ -160,4 +160,89 @@ export const guides: Guide[] = [
 <p>Scaling fulfillment is about having the right partner at the right time. Start with a flexible partner that handles small volumes, and grow into one that can support enterprise-scale operations. The transition from 10 to 1,000 orders/day is achievable with the right processes, communication, and infrastructure in place.</p>
 `,
   },
+  {
+    slug: 'ddp-shipping-from-china-explained',
+    title: 'DDP Shipping from China Explained: Why Delivered Duty Paid Matters for Dropshippers',
+    description: 'DDP (Delivered Duty Paid) shipping from China means your customers never pay surprise customs fees. Learn how DDP works, why it reduces disputes, and how to get DDP shipping for your dropshipping orders.',
+    date: '2025-12-12',
+    author: 'WegoFulfill Team',
+    category: 'Shipping',
+    readTime: '6 min read',
+    content: `
+<h2>What Is DDP Shipping?</h2>
+<p>DDP (Delivered Duty Paid) is a shipping method where all customs duties, taxes, and import fees are prepaid by the sender. Your customer receives their package with zero additional charges. This is the opposite of DDU (Delivered Duty Unpaid), where the customer must pay customs fees before receiving their order.</p>
+
+<h2>Why DDP Matters for Dropshippers</h2>
+<p>In 2021, the EU eliminated the €22 VAT exemption, meaning all imports are now subject to VAT. The US raised its de minimis threshold scrutiny. This means more packages get held at customs for fee collection.</p>
+<p>With DDU shipping, your customer gets a card from the post office saying "pay $15 in customs to receive your package." Many customers refuse, request refunds, or file chargebacks. DDP eliminates this problem entirely.</p>
+
+<h2>DDP vs DDU: Real-World Impact</h2>
+<table class="comparison-table">
+<tr><th>Metric</th><th>DDU (Standard)</th><th>DDP Shipping</th></tr>
+<tr><td>Customer surprise fees</td><td>$10-$50 per order</td><td>];
+</td></tr>
+<tr><td>Dispute/chargeback rate</td><td>5-8%</td><td>1-2%</td></tr>
+<tr><td>Delivery success rate</td><td>85-90%</td><td>97-99%</td></tr>
+<tr><td>Customer satisfaction</td><td>Low (unexpected fees)</td><td>High (smooth delivery)</td></tr>
+</table>
+
+<h2>How DDP Shipping Works with WegoFulfill</h2>
+<p>We offer DDP shipping lines to major destinations (US, UK, EU, Canada, Australia). The process is simple: we calculate the total landed cost (product + shipping + duties + taxes) upfront, and that's the price you pay. Your customer receives their order without any customs surprises.</p>
+
+<h2>Which Countries Need DDP Most?</h2>
+<p><strong>EU countries:</strong> VAT (19-27%) applies to all imports. DDP is essential. <strong>UK:</strong> Post-Brexit VAT rules require duty payment on imports over £135. <strong>Canada:</strong> Duties and GST/PST apply to most imports. <strong>Australia:</strong> GST (10%) on imports over AUD $1,000.</p>
+
+<h2>Cost of DDP Shipping</h2>
+<p>DDP shipping costs $1-3 more per order than standard shipping, but this is far cheaper than the cost of disputes and chargebacks from unhappy customers facing surprise fees. For most dropshipping products, the DDP premium is easily absorbed into your pricing.</p>
+
+<h2>How to Get Started</h2>
+<p>When you request a quote from us, simply mention you want DDP shipping for your target countries. We'll provide a per-order price that includes all duties and taxes. No setup required — just ask.</p>
+`,
+  },
+  {
+    slug: 'branded-dropshipping-complete-guide',
+    title: 'Branded Dropshipping: The Complete Guide to Building a Real Brand in 2025',
+    description: 'Branded dropshipping is the future of e-commerce. Learn how to move from generic AliExpress products to a branded business with custom packaging, private labels, and customer loyalty.',
+    date: '2025-12-11',
+    author: 'WegoFulfill Team',
+    category: 'Branding',
+    readTime: '10 min read',
+    content: `
+<h2>What Is Branded Dropshipping?</h2>
+<p>Branded dropshipping means selling products with your own branding — custom packaging, logo inserts, thank-you cards, and sometimes even custom product design — without holding inventory. Your China fulfillment partner handles sourcing, branding, and shipping on demand.</p>
+<p>This is different from traditional dropshipping, where products arrive in generic (often Chinese-labeled) packaging. Branded dropshipping makes your store look like a legitimate DTC brand, not a middleman.</p>
+
+<h2>Why Branded Dropshipping Wins in 2025</h2>
+<p>Consumers are smarter now. They recognize generic AliExpress packaging and will search for the product elsewhere at a lower price. Branding creates perceived value, reduces price competition, and builds customer loyalty. Stores with branded packaging see 2-3x higher repeat purchase rates.</p>
+
+<h2>Branding Options Available</h2>
+<p><strong>Custom packaging:</strong> Branded boxes or mailer bags with your logo. Minimum: 100-500 units. <strong>Poly bags with logo:</strong> Cheap, effective, no minimum with some agents. <strong>Thank-you cards & inserts:</strong> Cards with discount codes drive repeat purchases. <strong>Logo stickers:</strong> Applied to product packaging for instant branding. <strong>Custom product packaging:</strong> Retail-quality boxes designed for your brand.</p>
+
+<h2>Cost of Branding</h2>
+<table class="comparison-table">
+<tr><th>Branding Element</th><th>Cost per Order</th><th>Minimum Qty</th></tr>
+<tr><td>Logo sticker</td><td>];
+.05-];
+.15</td><td>None</td></tr>
+<tr><td>Thank-you card</td><td>];
+.10-];
+.20</td><td>None</td></tr>
+<tr><td>Branded poly bag</td><td>];
+.15-];
+.30</td><td>500</td></tr>
+<tr><td>Custom mailer box</td><td>];
+.50-$1.50</td><td>100-500</td></tr>
+<tr><td>Full custom packaging</td><td>$1.00-$3.00</td><td>500-1000</td></tr>
+</table>
+
+<h2>How to Start Branded Dropshipping</h2>
+<p>1. <strong>Choose your products</strong> and validate demand with unbranded sales first. 2. <strong>Design your branding</strong> — logo, packaging mockups, insert designs. 3. <strong>Send designs to your fulfillment partner</strong> for production. 4. <strong>Stock branded materials</strong> in your agent's warehouse. 5. <strong>Launch with branded fulfillment</strong> — every order ships with your branding.</p>
+
+<h2>Common Mistakes to Avoid</h2>
+<p><strong>Don't brand too early:</strong> Validate product demand before investing in packaging. <strong>Don't over-brand:</strong> Start with stickers and cards, upgrade to full packaging as volume grows. <strong>Don't forget customs labels:</strong> Ensure your agent removes Chinese labels and applies compliant destination-country labels.</p>
+
+<h2>How WegoFulfill Supports Branded Dropshipping</h2>
+<p>We store your branded materials (packaging, inserts, stickers) in our Shenzhen warehouse at no charge for 90 days. Every order is packed with your branding. No minimum order quantity for most branding services. We can also help design packaging and arrange production with local Chinese print shops at factory-direct prices.</p>
+`,
+  },
 ];
