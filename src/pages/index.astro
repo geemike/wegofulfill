@@ -3,12 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import InquiryForm from '../components/InquiryForm.astro';
+import { faqSchema } from '../lib/schema';
 ---
 
 <BaseLayout
   title="China Dropshipping Agent & Fulfillment Partner for Overseas Sellers"
   description="WegoFulfill is a China-based dropshipping agent and 3PL fulfillment partner. We source directly from Chinese factories, inspect quality, pick-pack-ship from Shenzhen, and deliver globally in 5-10 days."
   keywords="China dropshipping agent, China fulfillment center, dropshipping from China, factory-direct sourcing agent, China 3PL, Shenzhen fulfillment"
+  breadcrumbs={[{ name: 'Home', url: '/' }]}
+  schema={[faqSchema([
+    { question: 'Do you have a monthly fee?', answer: "No. We don't charge any monthly or subscription fees. You only pay per order." },
+    { question: 'Is there a Minimum Order Quantity (MOQ)?', answer: 'No MOQ. Many of our clients start with just a few orders per day and scale gradually.' },
+    { question: 'How do I pay?', answer: 'We support PayPal, Payoneer, and Wise.' },
+    { question: 'Can you handle multiple SKUs or mixed orders?', answer: 'Yes. We handle multiple SKUs, mixed orders, and bundled shipments on a daily basis.' }
+  ])]}
 >
   <Header slot="header" />
 
@@ -226,84 +234,9 @@ import InquiryForm from '../components/InquiryForm.astro';
     ]
   })} />
 
-  <!-- FAQ Page Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Do you have a monthly fee?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We don't charge any monthly or subscription fees. You only pay per order."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is there a Minimum Order Quantity (MOQ)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No MOQ. Many of our clients start with just a few orders per day and scale gradually."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I pay?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We support PayPal, Payoneer, and Wise."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you handle multiple SKUs or mixed orders?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. We handle multiple SKUs, mixed orders, and bundled shipments on a daily basis."
-        }
-      }
-    ]
-  })} />
+  
 
-  <!-- Service Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "China Dropshipping Fulfillment",
-    "name": "WegoFulfill - China Dropshipping & Fulfillment",
-    "description": "China-based dropshipping agent and 3PL fulfillment partner. Product sourcing, quality control, warehousing, and global shipping from Shenzhen, China.",
-    "provider": {
-      "@type": "Organization",
-      "name": "WegoFulfill",
-      "url": "https://www.wegofulfill.com",
-      "telephone": "+86-199-2524-7178",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Shenzhen",
-        "addressRegion": "Guangdong",
-        "addressCountry": "CN"
-      }
-    },
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Core Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Sourcing from China" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quality Control Inspection" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Order Fulfillment & Dropshipping" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Shipping from China" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Warehousing & Storage" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "After-sales & Reshipment Support" } }
-      ]
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "127"
-    }
-  })} />
+  
 
   <Footer slot="footer" />
 </BaseLayout>

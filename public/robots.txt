@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wegofulfill.vercel.app/sitemap.xml
+Sitemap: https://wegofulfill.com/sitemap.xml

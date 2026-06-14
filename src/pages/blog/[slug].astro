@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import { posts } from '../../data/posts';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
  return posts.map(post => ({
@@ -20,6 +21,8 @@ const { post } = Astro.props;
  description={post.description}
  keywords={`${post.category}, ${post.title}, China fulfillment, dropshipping, sourcing from China, ecommerce logistics`}
  pageType="article"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: post.title, url: '/blog/' + post.slug + '/' }]}
+  schema={[articleSchema({ title: post.title, description: post.excerpt, path: '/blog/' + post.slug + '/', datePublished: post.date })]}
 >
  <Header slot="header" />
 

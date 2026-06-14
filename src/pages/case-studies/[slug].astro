@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import { caseStudies } from '../../data/case-studies';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
   return caseStudies.map(cs => ({
@@ -20,6 +21,8 @@ const { cs } = Astro.props;
   description={cs.description}
   keywords={`dropshipping case study, ${cs.title}, fulfillment success story, ecommerce growth, China fulfillment results`}
   pageType="article"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies/' }, { name: cs.title, url: '/case-studies/' + cs.slug + '/' }]}
+  schema={[articleSchema({ title: cs.title, description: cs.excerpt, path: '/case-studies/' + cs.slug + '/' })]}
 >
   <Header slot="header" />
 

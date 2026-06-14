@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import { products } from '../../data/products';
+import { serviceSchema, breadcrumbSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
  return products.map(product => ({
@@ -20,6 +21,8 @@ const { product } = Astro.props;
  description={product.description}
  keywords={`${product.title}, China ${product.category}, ${product.category} services China, dropshipping ${product.category}, 3PL ${product.category} Shenzhen`}
  pageType="article"
+ breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }, { name: product.title, url: '/services/' + product.slug + '/' }]}
+ schema={[serviceSchema(product.title, product.description, '/services/' + product.slug + '/')]}
 >
  <Header slot="header" />
 

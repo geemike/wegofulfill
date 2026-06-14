@@ -3,12 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import InquiryForm from '../components/InquiryForm.astro';
+import { aboutPageSchema } from '../lib/schema';
 ---
 
 <BaseLayout
   title="About WegoFulfill - Your China-Based Fulfillment Partner"
   description="Me— Five, the founder of WegoFulfill. A China sourcing and fulfillment partner built on technical precision, life-changing journeys, and the hard-earned lessons of global e-commerce."
   keywords="about WegoFulfill, China fulfillment company, Shenzhen fulfillment center, China sourcing agent, 3PL company China, ecommerce fulfillment partner"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]}
+  schema={[aboutPageSchema()]}
 >
   <Header slot="header" />
 

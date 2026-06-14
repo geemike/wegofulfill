@@ -1,13 +1,16 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { contactPageSchema } from '../lib/schema';
 ---
 
 <BaseLayout
   title="Contact Us - Get a Free Fulfillment Quote | WegoFulfill"
   description="Contact WegoFulfill for a free, no-obligation quote on China product sourcing, fulfillment, and international shipping. Based in Shenzhen, China. Send your product details and we'll quote within 24 hours."
   keywords="contact WegoFulfill, China fulfillment quote, dropshipping quote, sourcing agent contact, fulfillment inquiry, free quote China shipping"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact/' }]}
+  schema={[contactPageSchema()]}
 >
   <Header slot="header" />
 

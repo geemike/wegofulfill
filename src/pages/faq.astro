@@ -1,7 +1,8 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { breadcrumbSchema } from '../lib/schema';
 
 const faqs = [
  {
@@ -59,6 +60,7 @@ const faqs = [
  title="FAQ - Frequently Asked Questions About China Fulfillment & Dropshipping"
  description="Common questions about WegoFulfill's China dropshipping and fulfillment services. Learn about pricing, MOQ, shipping times, quality control, platform integrations, and how to get started."
  keywords="China dropshipping FAQ, fulfillment FAQ, China sourcing questions, dropshipping MOQ, China shipping times, 3PL FAQ, dropshipping agent questions, fulfillment pricing FAQ"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'FAQ', url: '/faq/' }]}
 >
  <Header slot="header" />
 

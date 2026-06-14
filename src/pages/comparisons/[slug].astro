@@ -1,9 +1,10 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import { comparisons } from '../../data/comparisons';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
   return comparisons.map(comp => ({
@@ -20,6 +21,8 @@ const { comp } = Astro.props;
   description={comp.description}
   keywords={`${comp.compareItems.join(' vs ')}, China fulfillment comparison, dropshipping platform comparison, best fulfillment solution`}
   pageType="article"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Comparisons', url: '/comparisons/' }, { name: comp.title, url: '/comparisons/' + comp.slug + '/' }]}
+  schema={[articleSchema({ title: comp.title, description: comp.excerpt, path: '/comparisons/' + comp.slug + '/' })]}
 >
   <Header slot="header" />
 

@@ -1,9 +1,10 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import { guides } from '../../data/guides';
+import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
   return guides.map(guide => ({
@@ -20,6 +21,8 @@ const { guide } = Astro.props;
   description={guide.description}
   keywords={`China dropshipping guide, ${guide.title}, China fulfillment how-to, dropshipping tutorial, ecommerce guide`}
   pageType="article"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Guides', url: '/guides/' }, { name: guide.title, url: '/guides/' + guide.slug + '/' }]}
+  schema={[articleSchema({ title: guide.title, description: guide.excerpt, path: '/guides/' + guide.slug + '/' })]}
 >
   <Header slot="header" />
 

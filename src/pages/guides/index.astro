@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -10,6 +10,7 @@ import { guides } from '../../data/guides';
   title="Guides - China Dropshipping & Fulfillment How-To Articles"
   description="Practical step-by-step guides on dropshipping from China, Shopify fulfillment, Single SKU strategies, and scaling your e-commerce store. Expert advice from WegoFulfill."
   keywords="China dropshipping guide, how to dropship from China, Shopify fulfillment guide, single SKU fulfillment, scaling Shopify store, China fulfillment tutorial, ecommerce guide"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Guides', url: '/guides/' }]}
 >
   <Header slot="header" />
 
