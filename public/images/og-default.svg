@@ -1,0 +1,13 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="270" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="white" text-anchor="middle">WegoFulfill</text>
+  <text x="600" y="350" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="400" fill="rgba(255,255,255,0.85)" text-anchor="middle">China Dropshipping Agent &amp; Fulfillment Partner</text>
+  <text x="600" y="440" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600" fill="#60a5fa" text-anchor="middle">No MOQ · 1-2 Day Processing · 5-10 Day Global Shipping</text>
+  <text x="600" y="540" font-family="Inter, Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.6)" text-anchor="middle">Sourcing · QC · Warehousing · Shipping from Shenzhen, China</text>
+</svg>

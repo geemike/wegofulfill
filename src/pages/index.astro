@@ -226,6 +226,85 @@ import InquiryForm from '../components/InquiryForm.astro';
     ]
   })} />
 
+  <!-- FAQ Page Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you have a monthly fee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We don't charge any monthly or subscription fees. You only pay per order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a Minimum Order Quantity (MOQ)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No MOQ. Many of our clients start with just a few orders per day and scale gradually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I pay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We support PayPal, Payoneer, and Wise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you handle multiple SKUs or mixed orders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We handle multiple SKUs, mixed orders, and bundled shipments on a daily basis."
+        }
+      }
+    ]
+  })} />
+
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "China Dropshipping Fulfillment",
+    "name": "WegoFulfill - China Dropshipping & Fulfillment",
+    "description": "China-based dropshipping agent and 3PL fulfillment partner. Product sourcing, quality control, warehousing, and global shipping from Shenzhen, China.",
+    "provider": {
+      "@type": "Organization",
+      "name": "WegoFulfill",
+      "url": "https://www.wegofulfill.com",
+      "telephone": "+86-199-2524-7178",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Shenzhen",
+        "addressRegion": "Guangdong",
+        "addressCountry": "CN"
+      }
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Core Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Sourcing from China" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quality Control Inspection" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Order Fulfillment & Dropshipping" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Shipping from China" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Warehousing & Storage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "After-sales & Reshipment Support" } }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  })} />
+
   <Footer slot="footer" />
 </BaseLayout>
 
@@ -413,4 +492,13 @@ import InquiryForm from '../components/InquiryForm.astro';
     .partner-logos { gap: 15px; }
     .partner-logos img { height: 28px; }
   }
+  /* ===== Testimonials ===== */
+  .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .testimonial-card { background: var(--color-bg); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border); transition: all var(--transition); }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .testimonial-stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+  .testimonial-card p { color: var(--color-text); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic; }
+  .testimonial-author strong { display: block; color: var(--color-primary-dark); font-size: 1rem; }
+  .testimonial-author span { font-size: 0.85rem; color: var(--color-text-light); }
+  @media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
 </style>
