@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import { caseStudies } from '../../data/case-studies';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { articleSchema, breadcrumbSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
@@ -14,6 +15,7 @@ export function getStaticPaths() {
 }
 
 const { cs } = Astro.props;
+const relatedCases = caseStudies.filter(c2 => c2.slug !== cs.slug).slice(0, 3);
 ---
 
 <BaseLayout
@@ -47,6 +49,7 @@ const { cs } = Astro.props;
     </div>
   </article>
 
+  <RelatedLinks items={relatedCases.map(c2 => ({ slug: c2.slug, title: c2.title, description: c2.excerpt, category: 'Case Study' }))} basePath="/case-studies/" title="More Case Studies" />
   <InquiryForm
     title="Ready to Write Your Own Success Story?"
     subtitle="Send us your product details and get a free fulfillment quote."

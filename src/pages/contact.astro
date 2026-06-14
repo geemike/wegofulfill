@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { contactPageSchema } from '../lib/schema';
+import { contactPageSchema, faqSchema } from '../lib/schema';
 ---
 
 <BaseLayout
@@ -10,7 +10,12 @@ import { contactPageSchema } from '../lib/schema';
   description="Contact WegoFulfill for a free, no-obligation quote on China product sourcing, fulfillment, and international shipping. Based in Shenzhen, China. Send your product details and we'll quote within 24 hours."
   keywords="contact WegoFulfill, China fulfillment quote, dropshipping quote, sourcing agent contact, fulfillment inquiry, free quote China shipping"
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact/' }]}
-  schema={[contactPageSchema()]}
+  schema={[contactPageSchema(), faqSchema([
+      { question: 'How fast do you respond to inquiries?', answer: 'We typically respond within 24 hours, often much faster during business hours (CST).' },
+      { question: 'Is there a minimum order quantity to get started?', answer: 'No MOQ. Many clients start with just a few orders per day and scale gradually.' },
+      { question: 'What information should I include in my inquiry?', answer: 'Include product links or images, expected daily order volume, target countries, and any special requirements like branding or custom packaging.' },
+      { question: 'Do you charge for quotes?', answer: 'No. All quotes are free with no commitment required. You only pay when you decide to place orders.' }
+    ])]}
 >
   <Header slot="header" />
 
@@ -103,8 +108,43 @@ import { contactPageSchema } from '../lib/schema';
         </form>
       </div>
     </div>
+  </section>      </div>
+    </div>
   </section>
 
+  <!-- Contact FAQ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="contact-faq">
+        <details class="faq-item"><summary>How fast do you respond to inquiries?</summary><div class="faq-answer">We typically respond within 24 hours, often much faster during business hours (CST).</div></details>
+        <details class="faq-item"><summary>Is there a minimum order quantity to get started?</summary><div class="faq-answer">No MOQ. Many clients start with just a few orders per day and scale gradually.</div></details>
+        <details class="faq-item"><summary>What information should I include in my inquiry?</summary><div class="faq-answer">Include product links or images, expected daily order volume, target countries, and any special requirements like branding or custom packaging.</div></details>
+        <details class="faq-item"><summary>Do you charge for quotes?</summary><div class="faq-answer">No. All quotes are free with no commitment required. You only pay when you decide to place orders.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="overline">Global Shipping</span>
+        <h2>Countries We Ship To</h2>
+        <p>From our Shenzhen warehouse to your customers worldwide.</p>
+      </div>
+      <div class="regions-grid">
+        <div class="region-card"><h3>North America</h3><p>USA (5-8 days), Canada (7-10 days), Mexico</p></div>
+        <div class="region-card"><h3>Europe</h3><p>UK (4-6 days), Germany (5-8 days), France (5-8 days), Spain, Italy, Netherlands</p></div>
+        <div class="region-card"><h3>Oceania</h3><p>Australia (6-9 days), New Zealand</p></div>
+        <div class="region-card"><h3>Middle East & Asia</h3><p>UAE, Saudi Arabia, Japan, South Korea, Singapore, Malaysia</p></div>
+        <div class="region-card"><h3>Latin America</h3><p>Brazil, Chile, Colombia, Peru</p></div>
+        <div class="region-card"><h3>Africa</h3><p>South Africa, Nigeria, Kenya, Egypt</p></div>
+      </div>
+    </div>
+  </section>
   <Footer slot="footer" />
 </BaseLayout>
 
@@ -180,4 +220,17 @@ import { contactPageSchema } from '../lib/schema';
     .contact-grid { grid-template-columns: 1fr; }
     .form-grid { grid-template-columns: 1fr; }
   }
+  /* Contact FAQ */
+  .contact-faq { max-width: 800px; margin: 0 auto; }
+  .faq-item { border: 1px solid var(--color-border); border-radius: 10px; margin-bottom: 10px; overflow: hidden; background: var(--color-bg); }
+  .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
+  .faq-item summary::after { content: "+"; font-size: 1.3rem; color: var(--color-primary); }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-answer { padding: 0 24px 18px; color: var(--color-text-light); line-height: 1.7; }
+  /* Regions */
+  .regions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .region-card { padding: 1.5rem; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg); }
+  .region-card h3 { color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.05rem; }
+  .region-card p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6; }
+  @media (max-width: 768px) { .regions-grid { grid-template-columns: 1fr; } }
 </style>

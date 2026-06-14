@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.wegofulfill.com',
+  site: 'https://wegofulfill.com',
   output: 'static',
   build: {
     assets: 'assets',
   },
   compressHTML: true,
+  integrations: [sitemap()],
 });

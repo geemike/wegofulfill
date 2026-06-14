@@ -1,0 +1,54 @@
+---
+interface Item {
+  slug: string;
+  title: string;
+  description?: string;
+  category?: string;
+}
+
+interface Props {
+  title?: string;
+  items: Item[];
+  basePath: string; // e.g. '/blog/', '/guides/'
+}
+
+const { title = 'Related Articles', items, basePath } = Astro.props;
+---
+
+{items.length > 0 && (
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="related-title">{title}</h2>
+      <div class="related-grid">
+        {items.map(item => (
+          <a href={`${basePath}${item.slug}/`} class="related-card">
+            {item.category && <span class="related-cat">{item.category}</span>}
+            <h3>{item.title}</h3>
+            {item.description && <p>{item.description}</p>}
+            <span class="related-link">Read More &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .related-title { text-align: center; font-size: 1.75rem; margin-bottom: 2rem; font-weight: 800; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .related-card {
+    display: flex; flex-direction: column;
+    padding: 1.75rem; background: var(--color-bg);
+    border: 1px solid var(--color-border); border-radius: var(--radius);
+    transition: all var(--transition); text-decoration: none; color: inherit;
+  }
+  .related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+  .related-cat {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    color: var(--color-primary); margin-bottom: 0.5rem;
+  }
+  .related-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; line-height: 1.4; }
+  .related-card p { color: var(--color-text-light); font-size: 0.85rem; line-height: 1.6; flex-grow: 1; margin-bottom: 1rem; }
+  .related-link { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); }
+  @media (max-width: 768px) { .related-grid { grid-template-columns: 1fr; } }
+</style>
