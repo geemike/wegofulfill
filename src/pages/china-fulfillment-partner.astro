@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import { breadcrumbSchema, faqSchema, serviceSchema } from '../lib/schema';
+
+const partnerFaqs = [
+  { question: 'What does a China Fulfillment Partner do?', answer: 'A China fulfillment partner handles the entire supply chain for your e-commerce store: sourcing products from Chinese factories, quality control inspections, warehousing, pick & pack fulfillment, and global shipping directly to your customers.' },
+  { question: 'Do I need a China Fulfillment Partner for my Shopify store?', answer: 'If you sell products that can be sourced from China and want better margins, faster shipping, and quality control, a fulfillment partner is essential. Most successful Shopify stores use a China-based partner instead of dealing with AliExpress directly.' },
+  { question: 'How much does a China Fulfillment Partner cost?', answer: 'With WegoFulfill, there are no monthly fees or subscriptions. You pay per order: product cost + fulfillment handling + shipping. Total cost is typically 30-50% less than AliExpress dropshipping.' },
+  { question: 'Can a China Fulfillment Partner integrate with Shopify?', answer: 'Yes. We integrate with Shopify, WooCommerce, TikTok Shop, Amazon, and eBay. Orders sync automatically and tracking numbers upload back to your store.' },
+  { question: 'How fast can a China Fulfillment Partner ship?', answer: 'Standard shipping is 5-10 days to US/UK/EU/AU via YunExpress, 4PX, and Yanwen. Express shipping via DHL/FedEx is 3-5 days. Processing time is 1-2 days from our Shenzhen warehouse.' },
+];
+---
+<BaseLayout
+  title="China Fulfillment Partner - Sourcing, QC & Global Shipping for Shopify"
+  description="Looking for a reliable China Fulfillment Partner? WegoFulfill provides product sourcing, quality control, warehousing, and global shipping from Shenzhen. No MOQ, no monthly fees. Built for Shopify and e-commerce sellers worldwide."
+  keywords="China fulfillment partner, Shopify fulfillment partner, China fulfillment center, China sourcing agent, China 3PL, dropshipping fulfillment, Shenzhen warehouse, product sourcing China"
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'China Fulfillment Partner', url: '/china-fulfillment-partner/' }]}
+  schema={[serviceSchema('China Fulfillment Partner', 'Product sourcing, quality control, warehousing, and global shipping for Shopify and e-commerce sellers from Shenzhen, China.', '/china-fulfillment-partner/'), faqSchema(partnerFaqs)]}
+>
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="cfp-hero">
+    <div class="container">
+      <span class="hero-badge">China Fulfillment Partner</span>
+      <h1>Your China Fulfillment Partner<br>for <span>Shopify &amp; E-Commerce</span></h1>
+      <p>We are your dedicated team on the ground in China. From sourcing products at factory prices to inspecting quality, storing inventory, and shipping to your customers worldwide &mdash; we handle the entire supply chain so you can focus on marketing and growing your store.</p>
+      <div class="hero-stats">
+        <div class="hs-item"><strong>No MOQ</strong><span>Start with 1 order</span></div>
+        <div class="hs-item"><strong>1-2 Days</strong><span>Processing time</span></div>
+        <div class="hs-item"><strong>5-10 Days</strong><span>Global shipping</span></div>
+        <div class="hs-item"><strong>$0</strong><span>Monthly fees</span></div>
+      </div>
+      <a href="/contact/" class="btn btn-primary hero-cta">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>What a China Fulfillment Partner Does</h2>
+        <p>We handle everything between the Chinese factory and your customer's doorstep.</p>
+      </div>
+      <div class="grid-3">
+        <div class="service-block">
+          <div class="sb-icon">&#128230;</div>
+          <h3>Product Sourcing</h3>
+          <p>Send us a product link or image. We find the same product from Chinese factories at 30-50% lower cost than AliExpress, and negotiate the best pricing on your behalf.</p>
+        </div>
+        <div class="service-block">
+          <div class="sb-icon">&#9989;</div>
+          <h3>Quality Control</h3>
+          <p>Every product is visually inspected and tested before shipping. We catch defects before they reach your customers, reducing dispute rates from 8% to under 2%.</p>
+        </div>
+        <div class="service-block">
+          <div class="sb-icon">&#127970;</div>
+          <h3>Warehousing</h3>
+          <p>Free storage for 90 days in our Shenzhen warehouse. Your inventory is managed, tracked, and ready for same-day fulfillment when orders come in.</p>
+        </div>
+        <div class="service-block">
+          <div class="sb-icon">&#128230;</div>
+          <h3>Pick &amp; Pack</h3>
+          <p>Custom packaging, branded inserts, thank-you cards, logo stickers. Every order is packed to look like it came from your brand &mdash; not from China.</p>
+        </div>
+        <div class="service-block">
+          <div class="sb-icon">&#128674;</div>
+          <h3>Global Shipping</h3>
+          <p>Fast shipping lines (YunExpress, 4PX, Yanwen, DHL, FedEx) deliver in 5-10 days to US/UK/EU. DDP shipping available so your customers never pay surprise customs fees.</p>
+        </div>
+        <div class="service-block">
+          <div class="sb-icon">&#128241;</div>
+          <h3>Store Integration</h3>
+          <p>Seamless integration with Shopify, WooCommerce, TikTok Shop, Amazon, and eBay. Orders sync automatically, tracking numbers upload instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Needs This -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Who Needs a China Fulfillment Partner?</h2>
+      </div>
+      <div class="grid-2">
+        <div class="audience-card">
+          <h3>&#129680; New Shopify Sellers</h3>
+          <p>Just starting out? Test products with no minimum orders. We source, you sell. Scale at your own pace without inventory risk.</p>
+        </div>
+        <div class="audience-card">
+          <h3>&#128200; Growing Stores (10-100+ orders/day)</h3>
+          <p>Tired of AliExpress quality issues and slow shipping? Switch to a dedicated partner for better margins, faster delivery, and consistent quality.</p>
+        </div>
+        <div class="audience-card">
+          <h3>&#127942; Established Brands</h3>
+          <p>Need custom packaging, branded inserts, and reliable fulfillment at scale? We handle 500+ orders/day with the same attention to detail.</p>
+        </div>
+        <div class="audience-card">
+          <h3>&#127744; Multi-Platform Sellers</h3>
+          <p>Selling on Shopify, TikTok Shop, and Amazon? We integrate with all platforms and centralize your fulfillment from one warehouse in China.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shipping Times -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="overline">Global Delivery from Shenzhen</span>
+        <h2>Shipping Times to Major Markets</h2>
+      </div>
+      <div class="shipping-grid">
+        <div class="shipping-card"><span class="flag">&#127482;&#127480;</span><span class="country">USA</span><span class="days">5-8 <small>Days</small></span></div>
+        <div class="shipping-card"><span class="flag">&#127468;&#127463;</span><span class="country">UK</span><span class="days">4-6 <small>Days</small></span></div>
+        <div class="shipping-card"><span class="flag">&#127465;&#127466;</span><span class="country">Germany</span><span class="days">5-8 <small>Days</small></span></div>
+        <div class="shipping-card"><span class="flag">&#127467;&#127479;</span><span class="country">France</span><span class="days">5-8 <small>Days</small></span></div>
+        <div class="shipping-card"><span class="flag">&#127462;&#127482;</span><span class="country">Australia</span><span class="days">6-9 <small>Days</small></span></div>
+        <div class="shipping-card"><span class="flag">&#127464;&#127462;</span><span class="country">Canada</span><span class="days">7-10 <small>Days</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose WegoFulfill as Your China Fulfillment Partner?</h2>
+      </div>
+      <div class="grid-3">
+        <div class="reason-card">
+          <h3>&#127919; Factory-Direct Pricing</h3>
+          <p>We source directly from Chinese factories. No middleman markups. You get the same products 30-50% cheaper than AliExpress or CJdropshipping.</p>
+        </div>
+        <div class="reason-card">
+          <h3>&#128274; No Lock-In</h3>
+          <p>No monthly fees, no minimum volume requirements, no long-term contracts. Pay per order. Leave anytime. We earn your business every day.</p>
+        </div>
+        <div class="reason-card">
+          <h3>&#128241; Direct WhatsApp Access</h3>
+          <p>Talk to your dedicated agent directly on WhatsApp. Same-day responses. No ticketing systems, no chatbots, no waiting in queues.</p>
+        </div>
+        <div class="reason-card">
+          <h3>&#129514; Surgical Quality Control</h3>
+          <p>100% visual inspection on every order. Electronics tested for functionality. Packaging verified. Defective rate under 1%.</p>
+        </div>
+        <div class="reason-card">
+          <h3>&#127981; Shenzhen-Based</h3>
+          <p>We're located in Longhua District, Shenzhen &mdash; the heart of China's electronics and manufacturing hub. Direct access to factories and logistics networks.</p>
+        </div>
+        <div class="reason-card">
+          <h3>&#129309; We've Been in Your Shoes</h3>
+          <p>Our founder ran a Shopify store that scaled to 100+ employees. We know the pain points of e-commerce because we've lived them &mdash; that's why we built WegoFulfill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container narrow">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        {partnerFaqs.map(faq => (
+          <details class="faq-item">
+            <summary>{faq.question}</summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt">
+    <div class="container narrow" style="text-align: center;">
+      <h2>Ready to Work with a Real China Fulfillment Partner?</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--color-text-light);">Send us your product details and we'll quote within 24 hours. No commitment, no obligation.</p>
+      <a href="/contact/" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 40px;">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .cfp-hero {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #fff;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  .cfp-hero .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  .cfp-hero h1 { color: #fff; font-size: 2.75rem; font-weight: 800; line-height: 1.3; margin-bottom: 1.5rem; }
+  .cfp-hero h1 span { color: #60a5fa; }
+  .cfp-hero p { color: rgba(255,255,255,0.85); font-size: 1.15rem; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; }
+  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 600px; margin: 0 auto 2.5rem; }
+  .hs-item { text-align: center; }
+  .hs-item strong { display: block; font-size: 1.5rem; font-weight: 800; color: #60a5fa; }
+  .hs-item span { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+  .hero-cta { background: #fff; color: #2563eb; padding: 14px 36px; border-radius: 100px; font-weight: 700; font-size: 1rem; text-decoration: none; }
+
+  .service-block { padding: 2rem; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius); transition: all var(--transition); }
+  .service-block:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+  .sb-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .service-block h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .service-block p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.7; }
+
+  .audience-card { padding: 2rem; background: var(--color-bg); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+  .audience-card h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
+  .audience-card p { color: var(--color-text-light); line-height: 1.7; }
+
+  .reason-card { padding: 2rem; background: var(--color-bg); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+  .reason-card h3 { color: var(--color-primary); margin-bottom: 0.75rem; font-size: 1.05rem; }
+  .reason-card p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.7; }
+
+  .shipping-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+  .shipping-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 20px 15px; text-align: center; transition: all var(--transition); box-shadow: var(--shadow-sm); }
+  .shipping-card:hover { transform: translateY(-4px); border-color: var(--color-primary); box-shadow: var(--shadow-lg); }
+  .flag { font-size: 1.8rem; display: block; margin-bottom: 8px; }
+  .country { font-size: 0.85rem; color: var(--color-text-light); font-weight: 600; display: block; margin-bottom: 4px; }
+  .days { font-size: 1.15rem; font-weight: 800; }
+  .days small { font-size: 0.8rem; font-weight: 400; color: #94a3b8; }
+
+  .narrow { max-width: 800px; margin: 0 auto; }
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item { border: 1px solid var(--color-border); border-radius: 10px; overflow: hidden; background: var(--color-bg); }
+  .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; list-style: none; }
+  .faq-item summary::after { content: "+"; float: right; font-size: 1.3rem; color: var(--color-primary); }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-answer { padding: 0 24px 18px; color: var(--color-text-light); line-height: 1.7; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+  @media (max-width: 768px) {
+    .cfp-hero h1 { font-size: 1.85rem; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .shipping-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
